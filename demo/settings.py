@@ -25,7 +25,7 @@ SECRET_KEY = '$fy-dncicc&=+-h3fuxhrcz@t(zq@hlv5vfthy=tba6cmhe-h-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['172.31.45.188','*']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',  
     'rest_framework.authtoken',
     'restaurant',   
     # 'rest_framework_simplejwt '
@@ -67,8 +68,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
-
+CORS_ORIGIN_ALLOW_ALL = True
 ROOT_URLCONF = 'demo.urls'
 
 TEMPLATES = [
